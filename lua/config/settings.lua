@@ -9,3 +9,5 @@ opt.expandtab = true
 
 opt.number = true
 opt.relativenumber = true
+
+g.mapleader = " "
