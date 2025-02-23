@@ -1,1 +1,2 @@
-require('settings')
+require('config.settings')
+require('config.lazy')
