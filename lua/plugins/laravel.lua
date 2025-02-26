@@ -8,27 +8,27 @@ return {
   },
   cmd = { 'Laravel' },
   keys = {
-    { 
-      '<leader>la', 
-      mode = 'n', 
+    {
+      '<leader>la',
+      mode = 'n',
       ':Laravel artisan<cr>',
       desc = 'Laravel artisan'
     },
-    { 
-      '<leader>lr', 
-      mode = 'n', 
+    {
+      '<leader>lr',
+      mode = 'n',
       ':Laravel routes<cr>',
       desc = 'Laravel routes'
     },
-    { 
-      '<leader>lm', 
-      mode = 'n', 
+    {
+      '<leader>lm',
+      mode = 'n',
       ':Laravel related<cr>',
       desc = 'Laravel related'
     },
-    { 
-      '<leader>lh', 
-      mode = 'n', 
+    {
+      '<leader>lh',
+      mode = 'n',
       ':Laravel history<cr>',
       desc = 'Laravel history'
     },
