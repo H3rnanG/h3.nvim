@@ -11,18 +11,24 @@ return {
         },
         shortcut = {
           {
-            desc = '󰊳 Update',
+            desc = 'Update',
             group = '@property',
             action = 'Lazy update',
             key = 'u'
           },
           {
-            icon = ' ',
             icon_hl = '@variable',
-            desc = 'Files',
+            desc = 'Find files',
             group = 'Label',
-            action = 'Telescope find_files',
+            action = 'FzfLua files',
             key = 'f',
+          },
+          {
+            icon_hl = '@variable',
+            desc = 'NeoTree',
+            group = 'Label',
+            action = 'Neotree',
+            key = 'e',
           },
         },
       },
