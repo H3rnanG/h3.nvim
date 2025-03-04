@@ -16,6 +16,9 @@ return {
       },
     })
 
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
     local on_attach = function(client, bufnr)
       local buf_set_keymap = vim.api.nvim_buf_set_keymap
       local opts = { noremap = true, silent = true }
@@ -82,9 +85,10 @@ return {
 
       ['astro'] = function()
         lspconfig.astro.setup({
-          on_attach = on_attach
+          on_attach = on_attach,
+          capabilities = capabilities,
         })
-      end
+      end,
     })
 
     vim.api.nvim_create_autocmd("BufWritePre", {
