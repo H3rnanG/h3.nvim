@@ -3,16 +3,24 @@ return {
   dependencies = {
     'williamboman/mason-lspconfig.nvim',
     'nvimtools/none-ls.nvim',
+    'stevearc/conform.nvim',
   },
   config = function()
     require('mason-lspconfig').setup({})
 
     local lspconfig = require('lspconfig')
     local null_ls = require("null-ls")
+    local conform = require("conform")
 
     null_ls.setup({
       sources = {
         null_ls.builtins.formatting.prettier,
+      },
+    })
+
+    conform.setup({
+      formatters_by_ft = {
+        blade = { "blade-formatter" }
       },
     })
 
@@ -51,6 +59,13 @@ return {
         })
       end,
 
+      ['emmet_ls'] = function()
+        lspconfig.lua_ls.setup({
+          on_attach = on_attach,
+          capabilities = capabilities
+        })
+      end,
+
       ['intelephense'] = function()
         lspconfig.intelephense.setup({
           settings = {
@@ -59,7 +74,7 @@ return {
                 maxSize = 5000000, -- Increase file size limit for indexing
               },
               environment = {
-                phpVersion = "7.4", -- Set PHP version to 7.4
+                phpVersion = "8.4", -- Set PHP version to 7.4
               },
               diagnostics = {
                 enable = true,
@@ -77,9 +92,16 @@ return {
               format = {
                 enable = true,
               },
+              inlayHints = {
+                enable = false
+              },
+              codeLens = {
+                enable = false,
+              },
             },
           },
           on_attach = on_attach,
+          capabilities = capabilities,
         })
       end,
 

@@ -22,5 +22,24 @@ return {
         additional_vim_regex_highlighting = false,
       },
     }
+
+    -- Configuración del parser para Blade
+    local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+    parser_config.blade = {
+      install_info = {
+        url = "https://github.com/EmranMR/tree-sitter-blade",
+        files = {"src/parser.c"},
+        branch = "main",
+      },
+      filetype = "blade"
+    }
+
+    -- Autocmd para establecer el filetype de los archivos *.blade.php
+    vim.cmd [[
+      augroup BladeFiltypeRelated
+        autocmd!
+        autocmd BufNewFile,BufRead *.blade.php set ft=blade
+      augroup END
+    ]]
   end
 }

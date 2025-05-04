@@ -45,10 +45,11 @@ return {
         end, { 'i', 's' }),
       }),
       sources = cmp.config.sources({
-        { name = 'nvim_lsp' }, -- LSP
-        { name = 'luasnip' }, -- Snippets
-        { name = 'buffer' }, -- Archivos abiertos
-        { name = 'path' }, -- Rutas del sistema
+        { name = 'nvim_lsp' },                -- LSP
+        { name = 'luasnip' },                 -- Snippets
+        { name = 'buffer' },                  -- Archivos abiertos
+        { name = 'path' },                    -- Rutas del sistema
+        filetype = { "html", "blade", "php" } -- Agregar Blade aquí
       })
     })
 
